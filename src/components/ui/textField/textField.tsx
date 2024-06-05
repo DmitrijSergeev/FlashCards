@@ -1,11 +1,12 @@
-import { ComponentPropsWithoutRef } from 'react'
+import { ComponentPropsWithoutRef, forwardRef } from 'react'
 
 export type TextFieldProps = {
   className: string
+  label: string
 } & ComponentPropsWithoutRef<'input'>
 
-export const TextField = (props: TextFieldProps) => {
-  const {} = props
-
-  return <div></div>
-}
+export const TextField = forwardRef<HTMLInputElement, TextFieldProps>(
+  ({ className, id, label, onChange }, forwardRef) => {
+    return <div></div>
+  }
+)
