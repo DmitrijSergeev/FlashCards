@@ -1,12 +1,14 @@
 import type { Meta, StoryObj } from '@storybook/react'
 
+import { Logout } from '@/assets'
+
 import { Button } from './'
 
 const meta = {
   argTypes: {
     variant: {
       control: { type: 'radio' },
-      options: ['primary', 'secondary'],
+      options: ['primary', 'secondary', 'tertiary', 'link'],
     },
   },
   component: Button,
@@ -24,6 +26,17 @@ export const Primary: Story = {
     variant: 'primary',
   },
 }
+export const PrimaryWithIcon: Story = {
+  args: {
+    children: (
+      <>
+        Sign out <Logout />
+      </>
+    ),
+    disabled: false,
+    variant: 'primary',
+  },
+}
 
 export const Secondary: Story = {
   args: {
@@ -32,19 +45,28 @@ export const Secondary: Story = {
     variant: 'secondary',
   },
 }
+export const Link: Story = {
+  args: {
+    children: 'Link Button',
+    disabled: false,
+    variant: 'link',
+  },
+}
 
 export const FullWidth: Story = {
   args: {
-    children: 'Full Width Primary Button',
+    children: 'Full Width Button',
     disabled: false,
     fullWidth: true,
     variant: 'primary',
   },
 }
+
 export const AsLink: Story = {
   args: {
     as: 'a',
     children: 'Link that looks like a button',
+    href: 'https://google.com',
     variant: 'primary',
   },
 }
