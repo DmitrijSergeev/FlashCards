@@ -1,3 +1,10 @@
+import { Table } from '@/components/ui/table'
+
 export function App() {
-  return <div>Hello</div>
+  return (
+    <div>
+      Hello
+      <Table />
+    </div>
+  )
 }
